@@ -1,0 +1,16 @@
+{
+  "name": "angularjs-requirejs-search",
+  "version": "0.0.1",
+  "description": "Search angular application.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tophsic/angular-requirejs-search.git"
+  },
+  "keywords": [
+    "angularjs",
+    "requirejs"
+  ],
+  "author": "Christophe Sicard",
+  "license": "GPL",
+  "readmeFilename": "README.md"
+}
