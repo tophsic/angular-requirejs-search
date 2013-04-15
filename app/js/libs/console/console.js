@@ -1,6 +1,3 @@
-define(['order!libs/console/console-min'], function () {
-    debug.group("Entering Console module.");
-    debug.info("console: ", debug);
-    debug.groupEnd();
+define(['libs/console/console-min'], function () {
     return debug;
 });
