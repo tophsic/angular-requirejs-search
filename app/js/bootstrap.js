@@ -3,25 +3,20 @@
 require.config({
     paths: {
         Console: 'libs/console/console',
-        jQuery: 'libs/jquery/jquery',
-        Underscore: 'libs/underscore/underscore',
-        Angular: 'libs/angular/angular'
+        jquery: 'libs/jquery/jquery',
+        underscore: 'libs/underscore/underscore',
+        angular: 'libs/angular/angular'
     },
-    priority: [ 
-        "Console",
-        "jQuery",
-        "Underscore",
-        "Angular"
-    ]
+    urlArgs: 'v=1.0'
 });
 
 require(
     [
         'require',
         'Console',
-        'jQuery',
-        'Underscore',
-        'Angular'
+        'jquery',
+        'underscore',
+        'angular'
     ],
     function (require, Console, $, _, angular) {
         Console.group("Bootstrap dependencies loaded. Starting bootstrap.");
