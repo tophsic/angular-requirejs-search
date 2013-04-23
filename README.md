@@ -1,4 +1,1 @@
-======================
-Angularjs + RequireJs
-Search Angular app
-======================
+# Angularjs + RequireJs seed [![Build Status](https://secure.travis-ci.org/tophsic/angular-requirejs-search.png)](https://travis-ci.org/tophsic/angular-requirejs-search
