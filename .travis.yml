@@ -6,6 +6,7 @@ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - npm install -g grunt-cli
+  - ls -l /home/travis/build/tophsic/angular-requirejs-search/test/e2e/
 
 script:
   - grunt test:e2e --browsers Firefox --reporters=dots
