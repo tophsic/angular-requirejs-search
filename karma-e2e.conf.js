@@ -1,6 +1,6 @@
 //var angularFiles = require(__dirname + '/angularFiles.js');
 
-files = [ANGULAR_SCENARIO, ANGULAR_SCENARIO_ADAPTER, 'build/docs/docs-scenario.js'];
+files = ['test/scenario.js'];
 
 autoWatch = false;
 singleRun = true;
