@@ -6,7 +6,6 @@ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - npm install -g grunt-cli
-  - grunt webserver > /dev/null &
 
 script:
   - grunt test:e2e --browsers Firefox --reporters=dots
