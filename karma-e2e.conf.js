@@ -1,6 +1,6 @@
 //var angularFiles = require(__dirname + '/angularFiles.js');
 
-files = ['test/scenario.js'];
+files = ['test/e2e/scenario.js'];
 
 autoWatch = false;
 singleRun = true;
