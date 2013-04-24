@@ -4,7 +4,7 @@ files = ['test/e2e/scenarios.js'];
 
 autoWatch = false;
 singleRun = true;
-logLevel = LOG_DEBUG;
+logLevel = LOG_INFO;
 logColors = true;
 browsers = ['Chrome'];
 
