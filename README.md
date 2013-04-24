@@ -1,1 +1,1 @@
-# Angularjs + RequireJs seed [![Build Status](https://secure.travis-ci.org/tophsic/angular-requirejs-search.png)](https://travis-ci.org/tophsic/angular-requirejs-search
+# Angularjs + RequireJs seed [![Build Status](https://travis-ci.org/tophsic/angular-requirejs-search.png?branch=master)](https://travis-ci.org/tophsic/angular-requirejs-search)
