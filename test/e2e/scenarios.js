@@ -1,7 +1,7 @@
 describe('Search Angular App', function() {
     
     beforeEach(function() {
-        browser().navigateTo('../../app/index.html');
+        browser().navigateTo('/index.html');
     });
     
     it('Default test', function() {

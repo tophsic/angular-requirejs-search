@@ -1,6 +1,6 @@
-//var angularFiles = require(__dirname + '/angularFiles.js');
+var angularFiles = require(__dirname + '/angularFiles.js');
 
-files = ['test/e2e/scenarios.js'];
+files = [ANGULAR_SCENARIO, ANGULAR_SCENARIO_ADAPTER, 'test/e2e/scenarios.js'];
 
 autoWatch = false;
 singleRun = true;
@@ -9,6 +9,8 @@ logColors = true;
 browsers = ['Chrome'];
 
 proxies = {
+  '/angular': 'http://localhost:8000/build/angular',
+  '/': 'http://localhost:8000/app/'
 };
 
 junitReporter = {
