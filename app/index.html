@@ -8,15 +8,23 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     
     <link rel="stylesheet" href="css/app.css" />
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-    <script src="js/search.js"></script>-->
 </head>
 <body>
-    <div id="container" ng-controller="SearchController">
-        {{value}}
+    <div id="container">
+        <div id="form1" ng-controller="FormController">
+            <form ng-submit="submit()">
+                <input ng-model="form.field1"/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+        <div id="results" ng-controller="ResultController">
+            <ul ng-repeat="item in items">
+                <li>Id: {{item.id}}</li> 
+            </ul>
+        </div>
     </div>
     
-    <script data-main="js/bootstrap" src="js/require.js"></script>
+    <script data-main="js/main" src="js/require.js"></script>
     
 </body>
 </html>
