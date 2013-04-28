@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="utf-8" />
     
@@ -13,18 +13,25 @@
     <div id="container">
         <div id="form1" ng-controller="FormController">
             <form ng-submit="submit()">
-                <input ng-model="form.field1"/>
+                <input id="field1" ng-model="form.field1" placeholder="Field1"/>
                 <input type="submit" value="Submit"/>
             </form>
         </div>
         <div id="results" ng-controller="ResultController">
-            <ul ng-repeat="item in items">
-                <li>Id: {{item.id}}</li> 
+            <ul>
+                <li ng-repeat="item in result.items">{{item.id}} - {{item.field1}}</li>
+                <li class="next" ng-click="next()">Next</li>
+                <li class="message">{{result.message}}</li>
             </ul>
+            {{form}}
         </div>
     </div>
     
-    <script data-main="js/main" src="js/require.js"></script>
+    <!--<script data-main="js/main" src="js/require.js"></script>-->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="js/libs/angular/angular.min.js"></script>
+    <script src="js/libs/angular/angular-resource.min.js"></script>
+    <script src="js/controllers/controllers.js"></script>
     
 </body>
 </html>

@@ -1,0 +1,16 @@
+{
+    "filter": "/field1/Lorem",
+    "next": true,
+    "message": "",
+    "offset": 0,
+    "items": [
+        {
+            "id": 1,
+            "field1": "Lorem ipsum"
+        },
+        {
+            "id": 2,
+            "field1": "Ipsum lorem"
+        }
+    ]
+}

@@ -4,8 +4,15 @@ describe('Search Angular App', function() {
         browser().navigateTo('/index.html');
     });
     
-    it('Default test', function() {
-        expect(repeater('#container').count()).toEqual(1);
+    it('Test submit', function() {
+        expect(repeater('#field1').count()).toEqual(1);
+        
+        element('#form1 input[type=submit]').click();
+        
+        expect(repeater('ul li').count()).toEqual(4);
+        
+        expect(element('li.message').css('display')).toEqual('none');
+        expect(element('li.next').css('display')).toEqual('list-item');
     });
     
 });
