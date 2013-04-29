@@ -11,9 +11,15 @@
 </head>
 <body>
     <div id="container">
-        <div id="form1" ng-controller="FormController">
+        <div id="form1" ng-controller="Form1Controller">
             <form ng-submit="submit()">
                 <input id="field1" ng-model="form.field1" placeholder="Field1"/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+        <div id="form2" ng-controller="Form2Controller">
+            <form ng-submit="submit()">
+                <input id="field1" ng-model="form.field2" placeholder="Field2"/>
                 <input type="submit" value="Submit"/>
             </form>
         </div>

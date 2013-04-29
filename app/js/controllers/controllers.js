@@ -17,7 +17,9 @@ module.factory('SearchService', function($resource) {
 
 module.factory('ResultService', function() {
     return {
-        filter: '',
+        form: {
+            offset: 0
+        },
         items: []
     };
 });
@@ -52,14 +54,19 @@ module.factory('ResultElements', function() {
 
 angular.module('app', ['Search']);
 
-function FormController($scope, FormService, SearchService, ResultService, ResultElements) {
-    $scope.form = FormService;
+function Form1Controller(
+    $scope,
+    SearchService,
+    ResultService,
+    ResultElements
+) {
+    $scope.form = {};
     
     $scope.submit = function() {
-        FormService.offset = 0;
+        ResultService.form = $scope.form;
+        ResultService.form.offset = 0;
         SearchService.query($scope.form, function(result) {
             ResultService.items = result.items;
-            ResultService.filter = result.filter;
             ResultService.message = result.message;
             
             ResultElements.displayNext(result.next);
@@ -68,9 +75,36 @@ function FormController($scope, FormService, SearchService, ResultService, Resul
     }
 };
 
-FormController.$inject = [
+Form1Controller.$inject = [
     '$scope',
-    'FormService',
+    'SearchService',
+    'ResultService',
+    'ResultElements'
+];
+
+function Form2Controller(
+    $scope,
+    SearchService,
+    ResultService,
+    ResultElements
+) {
+    $scope.form = {};
+    
+    $scope.submit = function() {
+        ResultService.form = $scope.form;
+        ResultService.form.offset = 0;
+        SearchService.query($scope.form, function(result) {
+            ResultService.items = result.items;
+            ResultService.message = result.message;
+            
+            ResultElements.displayNext(result.next);
+            ResultElements.displayMessage(result.message !== '');
+        });
+    }
+};
+
+Form2Controller.$inject = [
+    '$scope',
     'SearchService',
     'ResultService',
     'ResultElements'
@@ -78,7 +112,6 @@ FormController.$inject = [
 
 function ResultController(
     $scope,
-    FormService,
     SearchService,
     ResultService,
     ResultElements
@@ -89,8 +122,8 @@ function ResultController(
     ResultElements.displayMessage(false);
     
     $scope.next = function() {
-        FormService.offset = ResultService.items.length;
-        SearchService.query(FormService, function(result) {
+        ResultService.form.offset = ResultService.items.length;
+        SearchService.query(ResultService.form, function(result) {
             ResultService.items = ResultService.items.concat(result.items);
             ResultService.filter = result.filter;
             ResultService.message = result.message;
@@ -103,7 +136,6 @@ function ResultController(
 
 ResultController.$inject = [
     '$scope',
-    'FormService',
     'SearchService',
     'ResultService',
     'ResultElements'
